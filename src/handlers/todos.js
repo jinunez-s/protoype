@@ -37,7 +37,7 @@ RequestHandler.post('/to-dos', async (request, response, next) => {
     }
 });
 
-RequestHandler.patch('to-dos/:id', async(req,res,next) => {
+RequestHandler.patch('/to-dos/:id', async(req,res,next) => {
     try {
         const todoId = req.params.id;
 
@@ -94,7 +94,7 @@ RequestHandler.get('/to-dos', async(req, res, next) => {
     }
 });
 
-RequestHandler.get('to-dos/:id', async (req, res, next) => {
+RequestHandler.get('/to-dos/:id', async (req, res, next) => {
     try {
         const todoId = req.params.id;
 
@@ -120,7 +120,7 @@ RequestHandler.get('to-dos/:id', async (req, res, next) => {
     }
 });
 
-RequestHandler.delete('to-dos/:id', async(req, res, next) => {
+RequestHandler.delete('/to-dos/:id', async(req, res, next) => {
     try {
         const todoId = req.params.id;
 
@@ -131,7 +131,6 @@ RequestHandler.delete('to-dos/:id', async(req, res, next) => {
         );
 
         dbHandler.close();
-
         res.send(deletedTodo);
     } catch (error) {
         res.status(500).send({
